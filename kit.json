@@ -1,0 +1,15 @@
+{
+  "version": "v1.0.0",
+  "ruleOrder": [
+    "working-style.md",
+    "commands.md",
+    "context-and-handoff.md",
+    "verification.md",
+    "reporting.md",
+    "git.md",
+    "delegation.md",
+    "safety.md",
+    "sources-of-truth.md",
+    "ci-budget.md"
+  ]
+}
