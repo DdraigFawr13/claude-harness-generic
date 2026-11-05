@@ -16,6 +16,7 @@ v1.0.0 built on branch `ccr-cc38cf67-9nfj6b`. Next: the owner's first setup at w
 ## Just done
 
 - 2026-11-05 Kit v1.0.0 written from AI-Master-Instructions v4.7.0. `check` and `node --test` pass locally.
+- 2026-11-05 Cold run: a fresh Sonnet agent followed SETUP.md alone on a scratch repo: 3 command rounds, `doctor` 0 problems, `run` PASS, no script errors. Its 6 unclear spots fixed in SETUP.md and SMOKE-TEST.md.
 
 ## Next
 

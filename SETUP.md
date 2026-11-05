@@ -1,6 +1,6 @@
 # Setup playbook (for the AI doing the setup)
 
-You are setting up an AI working harness in a project from this kit. Follow these steps in order. The setup takes three rounds of commands, which the owner runs and pastes back to you. You edit the files. Read this whole file first; it is about 130 lines.
+You are setting up an AI working harness in a project from this kit. Follow these steps in order. The setup takes three rounds of commands, which the owner runs and pastes back to you, then one commit. You edit the files. Read this whole file first; it is about 130 lines.
 
 What the project ends up with:
 
@@ -41,7 +41,7 @@ Expected: Node `v18` or later, a git version, the project's branch, and `check: 
 
 ## Step 3: round 2, set up the files (changes state)
 
-Label this block "writes files into the project; deletes and overwrites nothing". Add one `--check` per check command from step 1, and omit `--check` if there are none.
+Label this block "writes files into the project; deletes and overwrites nothing". Add one `--check` per check command from step 1, and omit `--check` if there are none. The project name defaults to the folder name; add `--project <name>` to set another. Each check gets a name from its command (`npm test` becomes `test`).
 
 ```
 node "<kit folder>/scripts/harness.mjs" init --target "<project folder>" --shell <powershell|cmd|bash> --runner <owner|agent> --check "<check command>"
@@ -55,13 +55,14 @@ Expected: `doctor:` lines listing the `{{FILL: ...}}` placeholders as `fill <pat
 
 ## Step 4: fill the placeholders (your edits, no commands)
 
-For each `fill <path>:<line>` line, replace the placeholder with real content. Take facts from the project's files (README, package or build files, CI config). Ask the owner only for what isn't written down (WS-06). Keep `AGENTS.md` under 80 lines. If checks were missing, add them to `.harness/harness.json` `"checks"` as `{ "name": "...", "run": "..." }` and list them in AGENTS.md "Local checks".
+For each `fill <path>:<line>` line, replace the placeholder with real content. Take facts from the project's files (README, package or build files, CI config). Ask the owner only for what isn't written down (WS-06). Keep `AGENTS.md` under 80 lines. If no `--check` was given in round 2, add the checks to `.harness/harness.json` `"checks"` as `{ "name": "...", "run": "..." }` and list them in AGENTS.md "Local checks".
 
 ## Step 5: fit the rules to this environment (your edits)
 
-Read `.harness/RULES.md` once. For each rule that cannot apply here, retire it in `.harness/rules/<file>.md`. Replace the rule's text with `SUPERSEDED by <id or "none">: <reason>`, keep the id, and list it in D-001 "Rules changed for this project". Don't delete rules and don't renumber them. Likely candidates:
+Read `.harness/RULES.md` once. For each rule that cannot apply here, retire it in `.harness/rules/<file>.md`. Replace the rule's text with `SUPERSEDED by <id or "none">: <reason>`, keep the id and its `<!-- why -->` line under it, and list it in D-001 "Rules changed for this project". Don't delete rules and don't renumber them. Likely candidates:
 
-- No pull requests or CI here: GIT-07, CI-02, CI-07. CI-03 is marked never override; keep it if any CI exists.
+- No pull requests here: GIT-07.
+- No CI here: CI-02, CI-07. Keep CI-03 anyway: it is marked never override, and it costs one line.
 - No sub-agents in your tool: DEL-01, DEL-04, DEL-05, DEL-08.
 - No UI: VER-06.
 - The agent runs its own commands: keep CMD-04 and CMD-05, retire CMD-01 to CMD-03.
