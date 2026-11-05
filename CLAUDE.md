@@ -1,0 +1,11 @@
+@AGENTS.md
+@core/rules/working-style.md
+@core/rules/commands.md
+@core/rules/context-and-handoff.md
+@core/rules/verification.md
+@core/rules/reporting.md
+@core/rules/git.md
+@core/rules/delegation.md
+@core/rules/safety.md
+@core/rules/sources-of-truth.md
+@core/rules/ci-budget.md

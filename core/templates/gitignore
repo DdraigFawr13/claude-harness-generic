@@ -1,0 +1,11 @@
+# Anchor root-only entries with a leading /
+/node_modules/
+/dist/
+/build/
+/coverage/
+/.claude/settings.local.json
+/.claude/worktrees/
+/.harness/last-run.log
+.env
+.env.*
+!.env.example
