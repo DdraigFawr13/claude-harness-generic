@@ -9,8 +9,8 @@ v1.0.0 built on branch `ccr-cc38cf67-9nfj6b`. Next: the owner's first setup at w
 ## Plan map
 
 - ✔ 1 Kit built: rules, templates, `harness.mjs`, tests, SETUP, smoke test (2026-11-05)
-- ▶ 2 Owner review and merge
-- ○ 3 First setup at work, following SETUP.md; record what was slow or wrong in docs/LESSONS.md
+- ✔ 2 Owner review and merge (2026-11-05)
+- ▶ 3 First setup at work, following SETUP.md; record what was slow or wrong in docs/LESSONS.md
 - ○ 4 Fix what step 3 found; release v1.1.0
 
 ## Just done
@@ -20,7 +20,7 @@ v1.0.0 built on branch `ccr-cc38cf67-9nfj6b`. Next: the owner's first setup at w
 
 ## Next
 
-1. The owner reviews. The repo had no `main` branch when this was pushed.
+1. Owner approved 2026-11-05; merged by PR into `main` (created with an empty root commit). Set `main` as the repo's default branch in GitHub settings.
 2. At work: copy or clone the kit, then point the work AI at SETUP.md.
 
 ## Open questions
